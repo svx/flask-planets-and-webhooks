@@ -28,6 +28,8 @@ Forked and based on [flask-planets-and-webhooks](https://github.com/lornajane/fl
 - [Python](https://www.python.org/ "Python website")
 - [pip](https://pypi.org/project/pip/ "Link to pip")
 - [venv](https://docs.python.org/3/library/venv.html "Link to venv docs")
+- [HTTPie](https://httpie.org/ "Link to HTTPie")
+- [Postman](https://www.postman.com/ "Link to Postman")
 
 We recommend [pyenv](https://github.com/pyenv/pyenv "Link to pyenv on GitHub") to manage multiple Python versions.
 
@@ -35,14 +37,23 @@ We recommend [pyenv](https://github.com/pyenv/pyenv "Link to pyenv on GitHub") t
 
 Clone the repository
 
+### SSH
+
 ```shell
-git clone git@github.com:atlasense/connector-spyder
+git clone git@github.com:ocular-d/flask-planets.git
 ```
+
+### HTTPS
+
+```shell
+https://github.com/ocular-d/flask-planets.git
+```
+
 
 Change into the cloned repository
 
 ```shell
-cd connector-spyder
+cd flask-planets
 ```
 
 Switch to Python 3.8.2
@@ -82,6 +93,68 @@ If everything goes well you should see output like this:
  * Debug mode: off
 INFO:werkzeug: * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
 ```
+
+Open your browser and go to http://127.0.0.1:5000/planets
+
+![Browser View](./docs/assets/flask-planets.png)
+
+Check the output with [HttPie](https://httpie.org/ "Link to HTTPie")
+
+```shell
+http http://127.0.0.1:5000/planets
+HTTP/1.0 200 OK
+Content-Length: 379
+Content-Type: application/json
+Date: Fri, 24 Jul 2020 07:48:34 GMT
+Server: Werkzeug/1.0.1 Python/3.8.2
+
+[
+    {
+        "moons": 0,
+        "name": "Mercury",
+        "position": 1
+    },
+    {
+        "moons": 0,
+        "name": "Venus",
+        "position": 2
+    },
+    {
+        "moons": 1,
+        "name": "Earth",
+        "position": 3
+    },
+    {
+        "moons": 2,
+        "name": "Mars",
+        "position": 4
+    },
+    {
+        "moons": 79,
+        "name": "Jupiter",
+        "position": 5
+    },
+    {
+        "moons": 62,
+        "name": "Saturn",
+        "position": 6
+    },
+    {
+        "moons": 27,
+        "name": "Uranus",
+        "position": 7
+    },
+    {
+        "moons": 14,
+        "name": "Neptune",
+        "position": 8
+    }
+]
+```
+
+Check with [Postman](https://www.postman.com/ "Link to Postman")
+
+![Postman List Planets](./docs/assets/postman-planets.png)
 
 ## 🤝 Contributing
 

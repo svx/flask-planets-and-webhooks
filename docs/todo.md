@@ -1,14 +1,14 @@
 # Todo
 
 Your mission, should you choose to accept it, is to create a valid OpenAPI v3 spec,
-for and short reference docs about how to get started with this API.
+and reference docs about this API.
 
 The spec should cover the following:
 
-- Introduction
+- Introduction (what is it about, link to NASA and planets)
 - Endpoints and endpoint descriptions
 - Tags
-- `x-code` for code examples (Wget cURL HTTP)
+- `x-code` for code examples (cURL HTTP)
 
 ## Goal
 
