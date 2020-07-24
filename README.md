@@ -1,24 +1,98 @@
-# Sample Flask App for 2-way APIs
+<div align="center">
 
-This application contains: one flask app in `app.py`. It serves up data about planets from [NASA data](https://solarsystem.nasa.gov/moons/in-depth/) at `/planets` and `/planets/<position>`. It also logs the incoming data it receives to a `/webhook` endpoint.
+# Planets And Webhooks
 
-Run it like this:
+</div>
 
+## Table of Contents
+
+- [About the Project](#📄-about)
+- [Getting Started](#🚀-getting-started)
+- [Contributing](#🤝-contributing)
+- [License](#📝-license)
+- [Credits](#🙏-credits)
+
+## 📄 About
+
+Sample [Flask](https://flask.palletsprojects.com/en/1.1.x/ "Flask website") App for 2-way APIs.
+
+It serves up data about planets from [NASA data](https://solarsystem.nasa.gov/moons/in-depth/ "Link to NASA") at `/planets` and `/planets/<position>`.
+It also logs the incoming data it receives to a `/webhook` endpoint.
+
+Forked and based on [flask-planets-and-webhooks](https://github.com/lornajane/flask-planets-and-webhooks).
+
+## 🚀 Getting Started
+
+### Requirements
+
+- [Python](https://www.python.org/ "Python website")
+- [pip](https://pypi.org/project/pip/ "Link to pip")
+- [venv](https://docs.python.org/3/library/venv.html "Link to venv docs")
+
+We recommend [pyenv](https://github.com/pyenv/pyenv "Link to pyenv on GitHub") to manage multiple Python versions.
+
+## Install
+
+Clone the repository
+
+```shell
+git clone git@github.com:atlasense/connector-spyder
 ```
-FLASK_APP=app.py python -mflask run
+
+Change into the cloned repository
+
+```shell
+cd connector-spyder
 ```
 
-This was created for a one-off talk, questions, comments and PRs all welcome but I'm not actively working on this project so please be patient!
+Switch to Python 3.8.2
 
-## HTTP Tools
+```shell
+pyenv local 3.8.2
+```
 
-These are the HTTP tools I enjoy and recommend:
+The repository includes a Makefile for effortless installation.
 
-* Start simple with curl <https://curl.haxx.se/>, a widely-available cross-platform command line HTTP client.
-* Another command line HTTP client, HttPie <https://httpie.org/> shows response status codes, headers and pretty prints JSON by default
-* Try jq <https://stedolan.github.io/jq/> or fx <https://github.com/antonmedv/fx> for handling JSON on the CLI. They are both incredible, flexible tools.
-* Graphical favourite: Postman <https://www.postman.com/> is awesome and the features would take a whole other README file! Let's go with: import OpenAPI specs, save requests, inspect responses, change parameters easily, and use environments to hold regularly-used values
-* Use HTTPBin <https://httpbin.org> to supply known responses to an API call. This is brilliant for checking your code responds as expected to specific status codes, or to have HTTPBin return information about the request it received (such as `/headers` which simply prints the headers your request included)
-* A brillant tool from former stellar startup Runscope, RequestBin <https://github.com/lornajane/requestbin> is a place to receive and inspect any HTTP request. I use it for checking my API is sending what I _think_ it is sending, and for receving events by webhook when I haven't implemented my own receiver yet. (The link here is my own fork, sadly the main repo is no longer maintained but I have assembled the best of what I found in the PR queue for it so I think this is the best available version today)
-* Ngrok <https://ngrok.com> is a tunnel to your local development platform. Use it to test a local website project on your phone, or to receive webhooks from an external supplier into your development code.
+```make
+make venv
+```
 
+This will create a [virtual environment](https://docs.python.org/3/tutorial/venv.html#creating-virtual-environments "Link to venv docs")
+and install all needed Python packages into this environment.
+
+After the setup is finished is it time to activate the virtual environment.
+
+```shell
+source venv/bin/activate
+```
+
+Start the application:
+
+```shell
+make run
+```
+
+If everything goes well you should see output like this:
+
+```shell
+ * Serving Flask app "app.py"
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+INFO:werkzeug: * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+```
+
+## 🤝 Contributing
+
+We are a community effort, and everybody is most welcome to participate!
+
+Be it filing bugs, formulating enhancements, creating pull requests, or any other means of contribution, we encourage contributions from everyone.
+
+## 📝 License
+
+Distributed under the [MIT](https://choosealicense.com/licenses/mit/ "Link to license") license.
+
+## Credits
+
+- [Lorna Jane Mitchell](https://github.com/lornajane "Link to bio on GitHub")
